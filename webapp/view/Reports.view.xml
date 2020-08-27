@@ -1,0 +1,106 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="poc.zvms.controller.Reports"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tnt="sap.tnt" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page title="{i18n>reportstitle}" navButtonPress="_onNavBack" showNavButton="true">
+				<content>
+					<tnt:ToolHeader>
+						<Button text="Dashboard" icon="sap-icon://bbyd-dashboard" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Manage Visitors" icon="sap-icon://visits" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Reports" icon="sap-icon://manager-insight" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+					</tnt:ToolHeader>
+					<l:VerticalLayout width="100%">
+						<fb:FilterBar reset="onReset" search="onSearch" id="btnGo">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem groupName="__$INTERNAL$" name="A" label="Date" partOfCurrentVariant="true" visibleInFilterBar="true">
+									<fb:control>
+										<DatePicker id="dpkDateFrom" valueFormat="MM/dd/yyyy" displayFormat="short"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="__$INTERNAL$" name="B" label="Department" labelTooltip="Tooltip Example" mandatory="true"
+									partOfCurrentVariant="true" visibleInFilterBar="true">
+									<fb:control>
+										<Select id="txtDept" class="width100">
+									<items>
+										<core:Item text="Select" key="0"/>
+										<core:Item text="Sales" key="Sales"/>
+										<core:Item text="HR" key="HR"/>
+										<core:Item text="Production" key="Production"/>
+									</items>
+								</Select>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<!--	<fb:filterItems>
+								<fb:FilterItem name="A" label="Date">
+									<fb:control>
+										<DatePicker id="dpkDateFrom" valueFormat="MM/dd/yyyy" displayFormat="short"/>
+								
+									</fb:control>
+								</fb:FilterItem>-->
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					</l:VerticalLayout>
+					<Table id="tblVisitors" inset="false" visible="true" class="sapUiResponsiveMargin" growing="true" growingScrollToLoad="true" width="auto"
+						growingThreshold="10" items="{path:'oExcel>/Visitors'}" noDataText="{i18n>nodatafound}">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="List of Visitors" level="H2"/>
+									<ToolbarSpacer/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column demandPopin="true">
+								<Text text="Gate Pass No."/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="Name"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Mobile No"/>
+							</Column>
+							<Column demandPopin="true" hAlign="Center" minScreenWidth="Tablet">
+								<Text text="Department"/>
+							</Column>
+							<Column demandPopin="true" hAlign="Center" minScreenWidth="Tablet">
+								<Text text="Visited Date"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle" type="Navigation" press="_onEdit">
+								<cells>
+									<Text text="{oExcel>VisitorId}"/>
+									<Text text="{oExcel>FullName}"/>
+									<Text text="{oExcel>MobileNo}"/>
+									<Text text="{oExcel>Department}"/>
+									<Text text="{oExcel>VisitDate}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+				<footer>
+					<Toolbar>
+						<content>
+							<ToolbarSpacer/>
+							<Button type="Accept" icon="sap-icon://excel-attachment" text="Download Excel" press="OnExport"/>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

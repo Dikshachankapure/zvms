@@ -1,0 +1,106 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="poc.zvms.controller.AddVisitor"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tnt="sap.tnt" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified">
+	<App>
+		<pages>
+			<Page title="{i18n>addvisitortitle}" navButtonPress="_onNavBack" showNavButton="true" floatingFooter="true">
+				<content>
+					<tnt:ToolHeader>
+						<Button text="Dashboard" icon="sap-icon://bbyd-dashboard" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Manage Visitors" icon="sap-icon://visits" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Reports" icon="sap-icon://manager-insight" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+					</tnt:ToolHeader>
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Add Visitor" labelSpanXL="3" labelSpanL="3"
+							labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+							columnsL="1" columnsM="1" singleContainerFullSize="false">
+							<f:content>
+								<Input id="txtVisiId" visible="false" value="0" type="Text"/>
+								<!--<Label text="Visitor ID" required="true"/>
+								<Input id="txtVisiId" type="Text"/>-->
+								<Label text="Gate No " required="true"/>
+								<Select id="txtGateNo" class="width100">
+									<items>
+										<core:Item text="Select" key="0"/>
+										<core:Item text="1" key="1"/>
+										<core:Item text="2" key="2"/>
+										<core:Item text="3" key="3"/>
+									</items>
+								</Select>
+								<Label text="Full Name" required="true"/>
+								<Input id="txtFullName" type="Text"/>
+								<Label text="Email" required="true"/>
+								<Input id="txtEmail" type="Email" submit="ValidEmail"  valueStateText="E-Mail must be a valid email address."/>
+								<Label text="Mobile Number" required="true"/>
+								<Input id="txtMbNo" type="Tel" maxLength="10"/>
+								<Label text="Address" required="true"/>
+								<TextArea id="txtAddress" rows="3"/>
+								<Label text="Identity Proof" required="true"/>
+								<Select id="txtIdenProof" class="width100">
+									<items>
+										<core:Item text="Select" key="0"/>
+										<core:Item text="Aadhar Card" key="Aadhar Card"/>
+										<core:Item text="Pan Card" key="Pan Card"/>
+										<core:Item text="Viter ID" key="Viter ID"/>
+									</items>
+								</Select>
+								<Label text="Identity Proof No" required="true"/>
+								<Input id="txtIdenProofNo" type="Number" maxLength="12"/>
+								<Label text="Upload Image" required="true"/>
+								<VBox>
+									<u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="upload/" tooltip="Upload your file to the local server"
+									change="onFileChange"	uploadComplete="handleUploadComplete"/>
+								</VBox>
+								<Label text="Company Name" required="true"/>
+								<Input id="txtcmpName" type="Text" maxLength="12"/>
+								<Label text="Whom to Meet" required="true"/>
+								<Input id="txtWhmToMeet" type="Text"/>
+								<Label text="Department" required="true"/>
+								<Select id="txtDept" class="width100">
+									<items>
+										<core:Item text="Select" key="0"/>
+										<core:Item text="Sales" key="Sales"/>
+										<core:Item text="HR" key="HR"/>
+										<core:Item text="Production" key="Production"/>
+									</items>
+								</Select>
+								<Label text="Reason to Meet" required="true"/>
+								<Input id="txtRsnToMeet" type="Text"/>
+								<Label text="Visit date" required="true"/>
+								<DatePicker id="txtVisitDate" placeholder="Enter Date ..." change="handleChange" class="sapUiSmallMarginBottom"/>
+								<Label text="In Time" required="true"/>
+								<TimePicker id="txtInTime" valueFormat="HH:mm" displayFormat="HH:mm" change="handleChange" placeholder="Enter meeting start time"/>
+								<Label text="Out Time" id="txtOutTimeL" required="true" visible="false"/>
+								<TimePicker id="txtOutTime" valueFormat="HH:mm" displayFormat="HH:mm" change="handleChange" placeholder="Enter meeting start time"
+									visible="false"/>
+								<Label text="Remarks " required="true"/>
+								<Input id="txtRemark" type="Text" maxLength="12"/>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<content>
+							<!--<Button id="btnPrint" text="Get Pass" icon="sap-icon://print" press="onPrint" type="Emphasized"/>-->
+							<ToolbarSpacer/>
+							<Button id="btnSave" text="Save" visible="true" icon="sap-icon://save" press="_onSaveUpdate" type="Emphasized" tooltip="Save"/>
+							<Button id="bnClear" text="Clear" icon="sap-icon://decline" press="_clearData" type="Reject" tooltip="Clear"/>
+						</content>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,57 @@
+{
+	"VisitorsByDay": [{
+		"FullName": "Name 1",
+		"Email": "test1@gmail.com",
+		"MobileNo": "1234567890",
+		"CompanyName": "Company 1",
+		"Department": "HR",
+		"VisitDate": "12/01/2020",
+		"InTime": "10:00 AM",
+		"OutTime": "01:00 PM",
+		"Remarks": "Remarks 1"
+	}, {
+		"FullName": "Name 2",
+		"Email": "test2@gmail.com",
+		"MobileNo": "1234567890",
+		"CompanyName": "Company 2",
+		"Department": "Sales",
+		"VisitDate": "11/01/2020",
+		"InTime": "01:00 PM",
+		"OutTime": "03:00 PM",
+		"Remarks": "Remarks 2"
+	},
+	{
+		"FullName": "Name 3",
+		"Email": "test3@gmail.com",
+		"MobileNo": "1234567891",
+		"CompanyName": "Company 3",
+		"Department": "Production",
+		"VisitDate": "13/02/2020",
+		"InTime": "10:00 AM",
+		"OutTime": "01:00 PM",
+		"Remarks": "Remarks 3"
+	},
+	{
+		"FullName": "Name 4",
+		"Email": "test4@gmail.com",
+		"MobileNo": "1234567823",
+		"CompanyName": "Company 4",
+		"Department": "HR",
+		"VisitDate": "10/01/2020",
+		"InTime": "10:00 AM",
+		"OutTime": "01:00 PM",
+		"Remarks": "Remarks 4"
+	},
+	{
+		"FullName": "Name 5",
+		"Email": "test5@gmail.com",
+		"MobileNo": "1234567845",
+		"CompanyName": "Company 5",
+		"Department": "Production",
+		"VisitDate": "8/03/2020",
+		"InTime": "10:00 AM",
+		"OutTime": "01:00 PM",
+		"Remarks": "Remarks 5"
+	}]
+
+}

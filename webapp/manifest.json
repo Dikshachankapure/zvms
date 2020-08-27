@@ -1,0 +1,226 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "poc.zvms",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "poc.zvms.view.Dashboard",
+			"type": "XML",
+			"async": true,
+			"id": "Dashboard"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "poc.zvms.i18n.i18n"
+				}
+			},
+			"VisitorSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondata/Visitors.json",
+				"preload": false
+			},
+			"VisitorByDaySet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondata/VisitorsByDay.json"
+			},
+			"VisitorByMonthSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondata/VisitorsByMonth.json"
+			},
+			"VisitorByYearSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondata/VisitorsByYear.json"
+			},
+			"CurrentVisitorSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondata/CurrentVisitor.json"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "poc.zvms.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "Dashboard",
+					"pattern": "",
+					"target": [
+						"Dashboard"
+					]
+				},
+				{
+					"name": "ManageVisitor",
+					"pattern": "managevisitor",
+					"target": [
+						"ManageVisitor"
+					]
+				},
+				{
+					"name": "AddVisitor",
+					"pattern": "addvisitor",
+					"target": [
+						"AddVisitor"
+					]
+				},
+				{
+					"name": "EditVisitor",
+					"pattern": "editvisitor/{VisitorId}",
+					"target": [
+						"EditVisitor"
+					]
+				},
+				{
+					"name": "Reports",
+					"pattern": "reports",
+					"target": [
+						"Reports"
+					]
+				},
+				{
+					"name": "ListVisitorByDay",
+					"pattern": "ListVisitorByDay",
+					"target": [
+						"ListVisitorByDay"
+					]
+				},
+				{
+					"name": "ListVisitorsByMonth",
+					"pattern": "ListVisitorsByMonth",
+					"target": [
+						"ListVisitorsByMonth"
+					]
+				},
+				{
+					"name": "ListVisitorsByYear",
+					"pattern": "ListVisitorsByYear",
+					"target": [
+						"ListVisitorByYear"
+					]
+				},
+				{
+					"name": "ListCurrentVisitor",
+					"pattern": "ListCurrentVisitor",
+					"target": [
+						"ListCurrentVisitor"
+					]
+				},
+				{
+					"name": "VisitorPass",
+					"pattern": "VisitorPass/{VisitorId}",
+					"target": [
+						"VisitorPass"
+					]
+				}
+			],
+			"targets": {
+				"Dashboard": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearControlAggregation": false,
+					"viewName": "Dashboard"
+				},
+				"ManageVisitor": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "ManageVisitor"
+				},
+				"AddVisitor": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "AddVisitor"
+				},
+				"EditVisitor": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "AddVisitor"
+				},
+				"Reports": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "Reports"
+				},
+				"ListVisitorByYear": {
+					"viewType": "XML",
+					"viewName": "ListVisitorByYear"
+				},
+				"ListVisitorByDay": {
+					"viewType": "XML",
+					"viewName": "ListVisitorByDay"
+				},
+				"ListVisitorsByMonth": {
+					"viewType": "XML",
+					"viewName": "ListVisitorsByMonth"
+				},
+				"ListCurrentVisitor": {
+					"viewType": "XML",
+					"viewName": "CurrentVisitor"
+				},
+				"VisitorPass": {
+					"viewType": "XML",
+					"viewName": "VisitorPass"
+				}
+			}
+		}
+	}
+}

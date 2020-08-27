@@ -1,0 +1,39 @@
+.sapMGTHdrTxt>.sapMText {
+    font-weight: bold;
+}
+
+.sapUiForm {
+    display: grid;
+}
+
+.sapUiRespGrid.sapUiRespGridHSpace1 {
+    /* padding: 0 0.5rem; */
+    border: 1px solid #060606;
+    width: 420px;
+    height: 250px;
+}
+
+.sapUiFormResGrid>.sapUiFormTitle {
+    border-bottom-width: 0px;
+    padding-left: 20px;
+}
+
+element.style {
+    order: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    min-height: auto;
+    min-width: auto;
+    width: 550px;
+}
+
+.sapMImg {
+    border: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    padding-top: 60px;
+    padding-left: 5px;
+    -webkit-touch-callout: none;
+}

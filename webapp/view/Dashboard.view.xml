@@ -1,0 +1,96 @@
+<mvc:View controllerName="poc.zvms.controller.Dashboard" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:tnt="sap.tnt">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<tnt:ToolHeader >
+							<Button text="Dashboard" icon="sap-icon://bbyd-dashboard" type="Transparent" press="_onPressMenu">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="Low"/>
+								</layoutData>
+							</Button>
+							<Button text="Manage Visitors" icon="sap-icon://visits" type="Transparent" press="_onPressMenu">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="Low"/>
+								</layoutData>
+							</Button>
+							<Button text="Reports" icon="sap-icon://manager-insight" type="Transparent" press="_onPressMenu">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="Low"/>
+								</layoutData>
+							</Button>
+						</tnt:ToolHeader>
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" frameType="TwoByOne" header="Total Visitors By Day" subheader=""
+							press="_onPressTiles">
+							<TileContent>
+								<NumericContent value="5" icon="sap-icon://employee" withMargin="false"/>
+							</TileContent>
+						</GenericTile>
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" frameType="TwoByOne" header="Total Visitors By Month" subheader=""
+							press="_onPressTiles">
+							<TileContent>
+								<NumericContent value="10" icon="sap-icon://employee" withMargin="false"/>
+							</TileContent>
+						</GenericTile>
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" frameType="TwoByOne" header="Total Visitors By Year" subheader=""
+							press="_onPressTiles">
+							<TileContent>
+								<NumericContent value="20" icon="sap-icon://employee" withMargin="false"/>
+							</TileContent>
+						</GenericTile>
+						<!--	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" frameType="TwoByOne" header="Current visitor list" subheader=""
+							press="_onPressTiles">
+							<TileContent>
+								<NumericContent value="6" icon="sap-icon://employee" withMargin="false"/>
+							</TileContent>
+						</GenericTile>-->
+						<Panel id="panel1" busyIndicatorDelay="0" expandable="true" expanded="true" headerText="List Of Current Visitors" width="auto"
+						class="sapUiResponsiveMargin">
+						<Table id="tblCurrentVisitor" inset="false" visible="true" class="sapUiResponsiveMargin" growing="true" growingScrollToLoad="true"
+							width="auto" growingThreshold="10" items="{/Visitors}" noDataText="{i18n>nodatafound}">
+							<headerToolbar>
+								<Toolbar>
+									<content>
+										<Title text="List of Current Visitors" level="H2"/>
+										<ToolbarSpacer/>
+										<SearchField liveChange="_onSearch" width="50%"/>
+									</content>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column demandPopin="true">
+									<Text text="Full Name"/>
+								</Column>
+								<Column demandPopin="true">
+									<Text text="In Time "/>
+								</Column>
+								<Column demandPopin="true" hAlign="Center" minScreenWidth="Tablet">
+									<Text text="Department "/>
+								</Column>
+								<Column demandPopin="true" minScreenWidth="Tablet">
+									<Text text="Mobile Number"/>
+								</Column>
+								<Column demandPopin="true" minScreenWidth="Tablet">
+									<Text text=" Whoom To Meet"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle" type="Navigation" press="_onEdit">
+									<cells>
+										<Text text="{FullName}"/>
+										<Text text="{InTime}"/>
+										<Text text="{Department}"/>
+										<Text text="{MobileNo}"/>
+										<Text text="{WhoomToMeet}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						</Panel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

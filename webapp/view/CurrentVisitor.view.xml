@@ -1,0 +1,68 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="poc.zvms.controller.CurrentVisitor"
+	xmlns:html="http://www.w3.org/1999/xhtml"  xmlns:tnt="sap.tnt" >
+	<App>
+		<pages>
+			<Page title="List Of Current Visitors" navButtonPress="_onNavBack" showNavButton="true">
+				<content>
+					<tnt:ToolHeader>
+						<Button text="Dashboard" icon="sap-icon://bbyd-dashboard" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Manage Visitors" icon="sap-icon://visits" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Reports" icon="sap-icon://manager-insight" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+					</tnt:ToolHeader>
+					<Table id="tblCurrentVisitor" inset="false" visible="true" class="sapUiResponsiveMargin" growing="true" growingScrollToLoad="true"
+						width="auto" growingThreshold="10" items="{/Visitors}" noDataText="{i18n>nodatafound}">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="List of Current Visitors" level="H2"/>
+									<ToolbarSpacer/>
+									<SearchField liveChange="_onSearch" width="50%"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column demandPopin="true">
+								<Text text="Full Name"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="In Time "/>
+							</Column>
+								<Column demandPopin="true" hAlign="Center" minScreenWidth="Tablet">
+								<Text text="Department "/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Mobile Number"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text=" Whoom To Meet"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle" type="Navigation" press="_onEdit">
+								<cells>
+									<Text text="{FullName}"/>
+									<Text text="{InTime}"/>
+									<Text text="{Department}"/>
+									<Text text="{MobileNo}"/>
+									<Text text="{WhoomToMeet}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

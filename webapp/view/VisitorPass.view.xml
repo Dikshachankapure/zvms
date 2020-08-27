@@ -1,0 +1,132 @@
+<mvc:View xmlns:c="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="poc.zvms.controller.VisitorPass"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt">
+	<App>
+		<pages>
+			<Page title="Visitor Pass" navButtonPress="_onNavBack" showNavButton="true">
+				<content>
+					<tnt:ToolHeader id="tnttool">
+						<Button text="Dashboard" icon="sap-icon://bbyd-dashboard" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Manage Visitors" icon="sap-icon://visits" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Reports" icon="sap-icon://manager-insight" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+					</tnt:ToolHeader>
+						<l:Grid  class="sapUiSmallMarginTop" position="Center" hSpacing="1" defaultSpan="L6 M6 S10">
+							<l:content>
+									<Image  id="idimage" width="130%">
+											<layoutData>
+										<l:GridData span="L3 M3 S8" linebreakL="false" linebreakM="false" linebreakS="false"/>
+									</layoutData>
+									</Image>
+								<VBox>
+								<f:SimpleForm id="SimpleFormChange354wide" editable="false" layout="ResponsiveGridLayout" title="VSD Tchnology pvt lt" labelSpanXL="4" labelSpanL="3"
+									width="800px" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+									columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
+									<f:content>
+										<Label text="Gate pass No"/>
+										<Text id="txtVisiId" />
+										<Label text="Visitor Name"/>
+										<Text id="txtFullName" />
+										<Label text="Gate No."/>
+										<Text id="txtGateNo" />
+										<Label text="Mobile Number"/>
+										<Text id="txtMbNo" />
+										<Label text="Person To Meet"/>
+										<Text id="txtWhmToMeet"/>
+										<Label text="Date"/>
+										<Text id="txtVisitDate"/>
+										<Label text="Time"/>
+										<Text id="txtInTime"></Text>
+									</f:content>
+								</f:SimpleForm>
+
+								
+								</VBox>
+							
+							</l:content>
+						</l:Grid>
+					<!--					<VBox class="sapUiSmallMargin ">
+						<f:Form  id="FormChange480_Trial" editable="false" width="750px" title="VSD Technology Pvt lt">
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4"
+									emptySpanM="0" emptySpanS="12" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer id="frm1" >
+									<f:formElements>
+										<f:FormElement label="Gate pass No">
+											<f:fields>
+												<Text id="txtVisiId" visible="true"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Visitor Name">
+											<f:fields>
+												<Text id="txtFullName"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Gate No.">
+											<f:fields>
+												<Text id="txtGateNo">
+													<layoutData>
+														<l:GridData span="XL2 L2 M2 S4"/>
+													</layoutData>
+												</Text>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Mobile Number" >
+											<f:fields>
+												<Text id="txtMbNo"></Text>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Person To Meet">
+											<f:fields>
+												<Text id="txtWhmToMeet"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Date">
+											<f:fields>
+												<Text id="txtVisitDate"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Time">
+											<f:fields>
+												<Text id="txtInTime"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer id="frm2"  >
+									<f:formElements>
+										<f:FormElement >
+											<f:fields>
+												<Image id="idimage" width="30%"></Image>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</VBox>
+-->
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<content>
+							<Button id="btnPrint" text="Print" icon="sap-icon://print" press="onPrintPass" type="Emphasized"/>
+						</content>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
