@@ -10,7 +10,7 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("poc.zvms.controller.AddVisitor", {
-//ok
+
 		onInit: function () {
 			this._oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this._oRouter.getRoute("EditVisitor").attachPatternMatched(this._onEditMatched, this);
